@@ -1,10 +1,29 @@
-<dependencies>
-	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<properties>
+			<property name="jakarta.persistence.jdbc.url"
+				value="jdbc:sqlserver://localhost:1433;databaseName=Book;trustServerCertificate=true" />
+			<property name="jakarta.persistence.jdbc.user" value="sa" />
+			<property name="jakarta.persistence.jdbc.password"
+				value="123456" />
+			<property name="jakarta.persistence.jdbc.driver"
+				value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+				
+			<property name="jakarta.persistence.jdbc.dialect"
+				value="org.hibernate.dialect.SQLServerDialect" />
+				
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+		</properties>
+
+ <dependencies>
+	    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>6.4.4.Final</version>
 		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-testing -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -12,72 +31,54 @@
 			<version>6.4.4.Final</version>
 			<scope>test</scope>
 		</dependency>
-	<!--https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+
+		<!--
+		https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
 		<dependency>
-			<groupId>com.microsoft.sqlserver</groupId>
-			<artifactId>mssql-jdbc</artifactId>
-			<version>12.3.0.jre17-preview</version>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.10.2</version>
+			<scope>test</scope>
 		</dependency>
+
+		<!--
+		https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.10.2</version>
+			<scope>test</scope>
+		</dependency>
+			<!-- https://mvnrepository.com/artifact/junit/junit -->
+	<dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>4.13.2</version>
+	</dependency>
 		
-    <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson --><!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+			<!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
 	<dependency>
-	    <groupId>com.google.code.gson</groupId>
-	    <artifactId>gson</artifactId>
-	    <version>2.10.1</version>
-	</dependency>
-	<!--https://mvnrepository.com/artifact/org.eclipse.persistence/eclipselink -->
-	<dependency>
-		<groupId>org.eclipse.persistence</groupId>
-		<artifactId>eclipselink</artifactId>
-		<version>4.0.2</version>
-	</dependency>
-	<!--https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
-	<dependency>
-		<groupId>org.junit.jupiter</groupId>
-		<artifactId>junit-jupiter-api</artifactId>
-		<version>5.10.2</version>
-		<scope>test</scope>
-	</dependency>
-	<!--https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
-	<dependency>
-		<groupId>org.junit.jupiter</groupId>
-		<artifactId>junit-jupiter-engine</artifactId>
-		<version>5.10.2</version>
-		<scope>test</scope>
-	</dependency>
-	<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-	<dependency>
-		<groupId>org.projectlombok</groupId>
-		<artifactId>lombok</artifactId>
-		<version>1.18.30</version>
-		<scope>provided</scope>
-	</dependency>
-	<!--https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
-	<dependency>
-		<groupId>org.mariadb.jdbc</groupId>
-		<artifactId>mariadb-java-client</artifactId>
-		<version>3.3.3</version>
+	    <groupId>com.microsoft.sqlserver</groupId>
+	    <artifactId>mssql-jdbc</artifactId>
+	    <version>12.7.0.jre11-preview</version>
 	</dependency>
 
-
-
-
+		
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.30</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>iuh.fit</groupId>
+			<artifactId>Deon1_server</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>iuh.fit</groupId>
+			<artifactId>Deon2_server</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
   </dependencies>
-
-<persistence-unit name="OntapJPA MSSQL">
-		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<properties>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=OntapDB;trustServerCertificate=true" />
-            <property name="jakarta.persistence.jdbc.user" value="sa" />
-            <property name="jakarta.persistence.jdbc.password" value="123456" />
-            <property name="jakarta.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
-            <property name="jakarta.persistence.jdbc.dialect" value="org.hibernate.dialect.SQLServerDialect" />
-            <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.format_sql" value="true" />
-            <property name="hibernate.hbm2ddl.auto" value="update" />
-         </properties>
-</persistence-unit>
-
-
-
-
